@@ -19,9 +19,11 @@ Two fixtures separate different parts of hosting performance:
 - [Hetzner CX43 direct origin](https://hostoff.firepixel.co.uk/) — the same backend over DNS-only HTTPS
 - [Hetzner CX23](http://178.105.83.180/hostoff/) — 2 vCPU / 4 GB, direct HTTP test endpoint
 
-Build `2026-09-01.2` has homepage SHA-256 `02197b5844b06767fdc4d5225e36fe1e0d7dc807336bc095b44caa86104cb748` on every mirror above.
+Control build `2026-09-01.2` has homepage SHA-256 `02197b5844b06767fdc4d5225e36fe1e0d7dc807336bc095b44caa86104cb748` on every mirror above.
 
-Append `/full/` to each mirror URL to load the complete visual fixture. For the direct Hetzner origin use [hostoff.firepixel.co.uk/full/](https://hostoff.firepixel.co.uk/full/).
+Full visual build `2026-09-01.3` has homepage SHA-256 `35bbe17938a2da4c1fac521cdc0ec0bb19c196924cc8592bd34ec82f96f5f9e8` and manifest SHA-256 `9d7d14d5d3c9c0d533ec4ad3f822298fd077ca78db9c4e79e347c512c223c3ee`.
+
+The visual build is live on Cloudflare Pages, GitHub Pages, MechanicWeb, both Hetzner CX43 routes and the Hetzner CX23. Append `/full/` to those mirror URLs; for the direct CX43 origin use [hostoff.firepixel.co.uk/full/](https://hostoff.firepixel.co.uk/full/). HostXNow remains on the control fixture until its currently unavailable SSH or cPanel upload path is restored.
 
 ## Rebuild the visual fixture
 
