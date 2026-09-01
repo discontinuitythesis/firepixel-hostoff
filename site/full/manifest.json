@@ -1,0 +1,105 @@
+{
+  "schemaVersion": "1.0",
+  "fixture": "firepixel-full-homepage",
+  "sourceCommit": "aba6a715832488d40c1047dc80dfe37323bbd0c7",
+  "canonical": "https://firepixel.co.uk/",
+  "analyticsRemoved": true,
+  "files": [
+    {
+      "path": "index.html",
+      "bytes": 26621,
+      "sha256": "35bbe17938a2da4c1fac521cdc0ec0bb19c196924cc8592bd34ec82f96f5f9e8"
+    },
+    {
+      "path": "favicon.svg",
+      "bytes": 577,
+      "sha256": "f20b3bc813ea2486a802744376e8ed3ff0651d0b1540c695954b99068a3e12d6"
+    },
+    {
+      "path": "_astro/archivo-latin-400-normal.Bl602Mgc.woff",
+      "bytes": 18972,
+      "sha256": "9c0a51442fdc30e015f734d04fd957ae00e3f39cc07817050735da301c0d7eda"
+    },
+    {
+      "path": "_astro/archivo-latin-400-normal.C81ewxNO.woff2",
+      "bytes": 14700,
+      "sha256": "07f9160163da2ec0f6376ef9d27a2bb8163f98019ba798da4baafb154e30056e"
+    },
+    {
+      "path": "_astro/archivo-latin-500-normal.CGugC8dq.woff2",
+      "bytes": 14600,
+      "sha256": "ab74eca5ad115fe4cfec82ba641e5d37e4d92c58dfb1bfc1e464e9039c9d17cf"
+    },
+    {
+      "path": "_astro/archivo-latin-500-normal.pkzA7jw9.woff",
+      "bytes": 18988,
+      "sha256": "29719fa13f06afbcc46f373e9e94f4ade13aca0fc997e7b4d35fea203cad776c"
+    },
+    {
+      "path": "_astro/archivo-latin-600-normal.3BBy0ZsW.woff2",
+      "bytes": 13820,
+      "sha256": "d9e8c29fdd348edde2a4f9aae438e569dd165bbbdebda78495824a2d9aaa67e8"
+    },
+    {
+      "path": "_astro/archivo-latin-600-normal.DwYieO8P.woff",
+      "bytes": 18200,
+      "sha256": "d8536b902812ad5fd85a6da4a11d88057415ed98f6b27b600a3f6497d6340df6"
+    },
+    {
+      "path": "_astro/conversion-value-builder.G5M-7_BJ.css",
+      "bytes": 22266,
+      "sha256": "a52b090f6ae312ef19b439ec39e525508f7a6efc89636b47a587903da4926b2c"
+    },
+    {
+      "path": "_astro/fraunces-latin-600-normal.BFCDtZfi.woff2",
+      "bytes": 18096,
+      "sha256": "3a1de7711d147bad4422825045f87597fd77cca72e7c96d3b0a81735d00dda82"
+    },
+    {
+      "path": "_astro/fraunces-latin-600-normal.DL5QCzvS.woff",
+      "bytes": 22512,
+      "sha256": "d78e988f844f474ce9b1cc10c72501add6c5056763bfe83ff2a8e2fcb6708ad0"
+    },
+    {
+      "path": "_astro/fraunces-latin-700-normal.CEOla-zY.woff2",
+      "bytes": 18212,
+      "sha256": "c38570d224b830056e69484bb9e768e1d3fa7ba4755c8891a3c6d366194d2ff3"
+    },
+    {
+      "path": "_astro/fraunces-latin-700-normal.DTjk5d1Q.woff",
+      "bytes": 22516,
+      "sha256": "1f9b0930f7a5e2b6aaba0df15f21bcdebebfcaff4b704daf3619589da69fd2a4"
+    },
+    {
+      "path": "_astro/ppc-quants-quote.gHY7ObOm_1TYvFu.webp",
+      "bytes": 31530,
+      "sha256": "c1a5507eabee9ef9ce0c8eafa347a352a904ca1e2406bca916cead664f1adc42"
+    },
+    {
+      "path": "_astro/ppc-quants-quote.gHY7ObOm_2taLKp.webp",
+      "bytes": 19898,
+      "sha256": "d57c79e743fe67604bcbb61a1be93ba6c2d02e2828b9dd2da9f444a48f576f29"
+    },
+    {
+      "path": "_astro/ppc-quants-quote.gHY7ObOm_Lo31x.avif",
+      "bytes": 15805,
+      "sha256": "9920f855f724d259c6d58758d08303cc1a5fe51b6e9994ef25afa5e6c3a432f8"
+    },
+    {
+      "path": "_astro/ppc-quants-quote.gHY7ObOm_LtQgN.avif",
+      "bytes": 11573,
+      "sha256": "c662b6522cb6803574edc5a3c26cdccd991ff06097d44bd72aafee62e5e319d8"
+    },
+    {
+      "path": "_astro/ppc-quants-quote.gHY7ObOm_Z2b16Ow.avif",
+      "bytes": 8006,
+      "sha256": "bb74f2163dbcf287e3d3e3099f25d9860969f9d246af84af243509fa58e2b16e"
+    },
+    {
+      "path": "_astro/ppc-quants-quote.gHY7ObOm_ZtkbkU.webp",
+      "bytes": 12972,
+      "sha256": "6b8a010db3902bf80122e5a8c02337106b35bba9af9f0b46cd5dd212b2dd9f5f"
+    }
+  ],
+  "totalBytes": 329864
+}

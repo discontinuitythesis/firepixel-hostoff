@@ -4,6 +4,11 @@ This repository publishes a neutral, non-commercial and tracking-free static fix
 
 The fixture is deliberately `noindex`, collects no personal data, and links to the canonical Fire Pixel website only for attribution.
 
+Two fixtures separate different parts of hosting performance:
+
+- `/` is the small 6 KB control page for connection, response-time and concurrency tests.
+- `/full/` is a faithful build of the Fire Pixel homepage with its real responsive image, CSS and fonts. Third-party analytics are removed so the host—not Google Tag Manager, CookiePal or Clarity—is what the test measures. Its manifest records every byte and SHA-256 hash.
+
 ## Live mirrors
 
 - [Cloudflare Pages](https://firepixel-hostoff.pages.dev/) — static edge delivery
@@ -15,5 +20,17 @@ The fixture is deliberately `noindex`, collects no personal data, and links to t
 - [Hetzner CX23](http://178.105.83.180/hostoff/) — 2 vCPU / 4 GB, direct HTTP test endpoint
 
 Build `2026-09-01.2` has homepage SHA-256 `02197b5844b06767fdc4d5225e36fe1e0d7dc807336bc095b44caa86104cb748` on every mirror above.
+
+Append `/full/` to each mirror URL to load the complete visual fixture. For the direct Hetzner origin use [hostoff.firepixel.co.uk/full/](https://hostoff.firepixel.co.uk/full/).
+
+## Rebuild the visual fixture
+
+With the production Fire Pixel build in the sibling `firepixel/dist` directory:
+
+```sh
+node scripts/build-full-homepage.mjs
+```
+
+The generator fails if the expected analytics or canonical markup changes, rewrites the asset paths for every mirror, and writes `site/full/manifest.json` for deployment verification.
 
 See [the first dated benchmark](RESULTS-2026-09-01.md) for repeated single-request timings, HTTP/2 burst results and full-page Lighthouse evidence. The Dell OptiPlex mirror remains to be added.
