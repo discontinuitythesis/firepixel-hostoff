@@ -19,9 +19,10 @@ const coldRuns = positiveInteger(process.env.COLD_RUNS, 5);
 const burstTrials = positiveInteger(process.env.BURST_TRIALS, 3);
 const burstConcurrency = positiveInteger(process.env.BURST_CONCURRENCY, 6);
 const chromePath = process.env.CHROME_PATH || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
-const outputPath = resolve(process.argv[2] || join(projectRoot, 'results', 'full-browser-2026-09-01.json'));
+const cli = parseCli(process.argv.slice(2));
+const outputPath = resolve(cli.output || join(projectRoot, 'results', 'full-browser-2026-09-01.json'));
 
-const mirrors = [
+const mirrorCatalog = [
   {
     id: 'cloudflare-pages',
     label: 'Cloudflare Pages',
@@ -39,6 +40,12 @@ const mirrors = [
     label: 'MechanicWeb',
     protocol: 'HTTP/2',
     url: 'https://unitcostdominance.com/hostoff/full/',
+  },
+  {
+    id: 'hostxnow',
+    label: 'HostXNow',
+    protocol: 'HTTP/2',
+    url: 'https://benluong.com/hostoff/full/',
   },
   {
     id: 'hetzner-cx43-tunnel',
@@ -59,6 +66,15 @@ const mirrors = [
     url: 'http://178.105.83.180/hostoff/full/',
   },
 ];
+
+const requestedIds = new Set(cli.only);
+const mirrors = requestedIds.size
+  ? mirrorCatalog.filter((mirror) => requestedIds.has(mirror.id))
+  : mirrorCatalog;
+const unknownIds = [...requestedIds].filter((id) => !mirrorCatalog.some((mirror) => mirror.id === id));
+if (unknownIds.length) {
+  throw new Error(`Unknown mirror id(s): ${unknownIds.join(', ')}`);
+}
 
 const launchOptions = {
   headless: true,
@@ -300,6 +316,34 @@ function percentile(values, proportion) {
 function positiveInteger(value, fallback) {
   const parsed = Number.parseInt(value || '', 10);
   return Number.isInteger(parsed) && parsed > 0 ? parsed : fallback;
+}
+
+function parseCli(args) {
+  const options = { only: [], output: '' };
+  for (let index = 0; index < args.length; index += 1) {
+    const argument = args[index];
+    if (argument === '--only') {
+      const value = args[index + 1];
+      if (!value || value.startsWith('--')) throw new Error('--only requires a comma-separated mirror id list');
+      options.only.push(...parseMirrorIds(value));
+      index += 1;
+    } else if (argument.startsWith('--only=')) {
+      options.only.push(...parseMirrorIds(argument.slice('--only='.length)));
+    } else if (argument.startsWith('--')) {
+      throw new Error(`Unknown option: ${argument}`);
+    } else if (!options.output) {
+      options.output = argument;
+    } else {
+      throw new Error(`Unexpected positional argument: ${argument}`);
+    }
+  }
+  return options;
+}
+
+function parseMirrorIds(value) {
+  const ids = value.split(',').map((id) => id.trim()).filter(Boolean);
+  if (!ids.length) throw new Error('--only requires a comma-separated mirror id list');
+  return ids;
 }
 
 function rounded(value, digits = 0) {
