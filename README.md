@@ -2,6 +2,8 @@
 
 This repository publishes a neutral, non-commercial and tracking-free static fixture used to compare hosting platforms. Every mirror receives the exact contents of `site/`.
 
+The reader-friendly comparison, interactive rankings and live mirror links are published at [firepixel.co.uk/host-off](https://firepixel.co.uk/host-off).
+
 The fixture is deliberately `noindex`, collects no personal data, and links to the canonical Fire Pixel website only for attribution.
 
 Two fixtures separate different parts of hosting performance:
